@@ -1,3 +1,4 @@
+import { PhotoEditorComponent } from './members/photo-editor/photo-editor.component';
 import { MemberEditComponent } from './members/member-edit/member-edit.component';
 import { JwtInterceptor } from './_interceptors/jwt.interceptor';
 import { MemberCardComponent } from './members/member-card/member-card.component';
@@ -36,7 +37,8 @@ import { NgxSpinner } from 'ngx-spinner';
     NotfoundComponent,
     ServerErrorComponent,
     MemberCardComponent,
-    MemberEditComponent
+    MemberEditComponent,
+    PhotoEditorComponent
   ],
   imports: [
     BrowserModule,

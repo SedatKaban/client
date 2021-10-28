@@ -27,7 +27,8 @@
     
 
     <div class="dropdown" *ngIf="(accountService.currentUsers$|async) as user" dropdown>
-      <a class="dropdown-toggle text-light" dropdownToggle>Hoşgeldin {{user.username|titlecase}}</a>
+      <img [src]="getSanitizeUrl(user.photoUrl)"  alt=" {{user.username}} ">
+      <a class="dropdown-toggle text-light ml-2" dropdownToggle>Hoşgeldin {{user.username|titlecase}}</a>
       <a class="div dropdown-menu mt-3" *dropdownMenu>
         <div class="dropdown-divider"></div>
         <a routerLink ="/member/edit" class="dropdown-item">Profil Düzenleme</a>

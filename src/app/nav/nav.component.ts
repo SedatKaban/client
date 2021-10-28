@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AccountService } from './../_services/account.service';
 import { Component, OnInit } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 export class NavComponent implements OnInit {
   model: any = {};
 
-  constructor(public accountService: AccountService, private router:Router, private toastr:ToastrService) {}
+  constructor(public accountService: AccountService, private router:Router, private toastr:ToastrService,private sanitizer: DomSanitizer) {}
 
   ngOnInit(): void {
 
@@ -34,7 +35,10 @@ export class NavComponent implements OnInit {
     this.router.navigateByUrl('/');
    
   }
+
+  public getSanitizeUrl(url : string) {
+    return this.sanitizer.bypassSecurityTrustUrl(url);
  
     
-  
+  }
 }
